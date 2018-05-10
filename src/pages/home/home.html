@@ -1,14 +1,74 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Bienvenido a tu perfil
+            <ion-icon item-end
+                      name="md-person"></ion-icon>
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+
+    <ion-list>
+
+        <ion-item>
+
+            <ion-thumbnail *ngIf="!imagen">
+
+                <img src="assets/imgs/perfil.jpg">
+
+
+            </ion-thumbnail>
+
+            <ion-thumbnail *ngIf="imagen">
+
+
+                <img [src]="imagen"
+                     class="img">
+
+            </ion-thumbnail>
+
+
+
+            <h2>Realiza tu foto</h2>
+            <ion-icon (click)="takePicture()"
+                      item-end
+                      name="ios-camera"></ion-icon>
+
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Nombre</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Apellidos</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Celular</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Fecha Nacimiento</ion-label>
+            <ion-input type="date"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Correo electronico</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <button ion-button
+                    block
+                    (click)="registrar()">Registrar</button>
+        </ion-item>
+
+
+    </ion-list>
 </ion-content>
